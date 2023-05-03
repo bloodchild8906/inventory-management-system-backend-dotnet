@@ -18,7 +18,7 @@ namespace Persistence.GenericRepository.Repository
 
         public async Task<TEntity?> GetByIdAsync(TId id, CancellationToken cancellationToken = default)
         {
-            var keyValues = new object[] { id };
+            var keyValues = new object[] { id! };
             return await _context.Set<TEntity>().FindAsync(keyValues, cancellationToken);
         }
 
